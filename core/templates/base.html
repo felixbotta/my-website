@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Felix Botta</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
+</head>
+<body>
+<header>
+    <div class="links">
+        <a href="{% url 'core:about' %}">Sobre</a>
+        <a href="{% url 'core:skills' %}">Skills</a>
+        <a href="{% url 'core:contact' %}">Contato</a>
+
+    </div>
+</header>
+{% block content %}{% endblock %}
+
+<div id="links-footer" class="links">
+    <a href="https://github.com/felixbotta" target="_blank">Github</a>
+    <a href="mailto:felix.botta@gmail.com">E-mail</a>
+    <a href="https://linkedin.com/in/felix-botta" target="_blank">Linkedin</a>
+</div>
+</body>
+</html>

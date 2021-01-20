@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div id="wrapper">
+    <h1>Skills</h1>
+</div>
+
+<section class="cards">
+    {% for skill in skills %}
+    <div class="card">
+        <div class="card_image_container">
+            <img src="{{ skill.img.url }}" alt="{{ skill.name }}" height="250px" width="400px" />
+        </div>
+        <div class="card_content">
+            <p>{{ skill.name }}</p>
+        </div>
+        <div class="card_info">
+            <p>{{ skill.description }}</p>
+            <p class="card_star">{{ skill.experience }}</p>
+        </div>
+    </div>
+    {% empty %}
+    <div class="pure-g-r content-ribbon">
+        <div class="pure-u-1">
+            <div class="l-box">
+                <p>No skill registered.</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+
+{% endblock %}
